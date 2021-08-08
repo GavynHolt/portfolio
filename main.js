@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('loaded');
+  // Cache selectors
+  const navLinks = document.querySelectorAll('.navLink');
 
   // Scroll event listener for side nav (updates black circle on active section)
   document.addEventListener('scroll', () => {
@@ -7,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const currentScrollY = window.scrollY;
     const navHeightOffset = document.querySelector('.nav').offsetHeight;
 
-    const navLinks = document.querySelectorAll('.navLink');
+    // const navLinks = document.querySelectorAll('.navLink');
 
     for ([index, link] of navLinks.entries()) {
       const hrefElementPosition = document.querySelector(link.attributes.href.value).offsetTop;
@@ -26,7 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // Hamburger menu Event listener
   const hamburgerButton = document.querySelector('.hamburger');
   hamburgerButton.addEventListener('click', () => {
-    console.log('click!');
     const navLinksContainer = document.querySelector('.nav-links-container');
     navLinksContainer.classList.toggle('showNav');
     // //add focus to current page section
@@ -37,4 +37,12 @@ document.addEventListener('DOMContentLoaded', () => {
     //   }
     // }
   });
+
+  // Close Hamburger on anchor tag click event listener
+  for (link of navLinks) {
+    link.addEventListener('click', () => {
+      const navLinksContainer = document.querySelector('.nav-links-container');
+      navLinksContainer.classList.remove('showNav');
+    });
+  }
 });
