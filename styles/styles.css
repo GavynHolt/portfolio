@@ -430,7 +430,7 @@ section {
           flex: 0 1 400px;
   -ms-flex-item-align: start;
       align-self: start;
-  margin-right: 5vw;
+  margin-right: 40px;
 }
 .about .about-container .image img {
   width: 100%;
@@ -441,7 +441,7 @@ section {
           flex: 0 1 800px;
 }
 .about .about-container .description-container .description {
-  margin-bottom: 3vw;
+  margin-bottom: 40px;
 }
 .about .about-container .description-container .description p {
   font-size: 2rem;
@@ -468,7 +468,7 @@ section {
 
 .project-container .project-description {
   max-width: 800px;
-  margin: 3vw auto 0;
+  margin: 40px auto 0;
 }
 .project-container .project-description ul {
   margin-top: 40px;
@@ -485,7 +485,12 @@ section {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  font-style: italic;
+}
+.project-container .project-description .skills li {
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 4px 6px;
+  margin: 0 5px;
 }
 .project-container .project-description .description {
   line-height: 2.25rem;
@@ -576,7 +581,7 @@ section {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 300px;
           flex: 1 1 300px;
-  margin-left: 5vw;
+  margin-left: 40px;
 }
 .contact .contact-card .image {
   max-width: 300px;
@@ -609,12 +614,16 @@ footer a:hover {
   }
 
   .nav nav .showNav.nav-links-container {
-    height: auto;
+    max-height: 100vh;
     overflow: auto;
+    -webkit-transition: max-height 0.3s ease-out;
+    transition: max-height 0.3s ease-out;
   }
   .nav nav .nav-links-container {
-    height: 0;
+    max-height: 0;
     overflow: hidden;
+    -webkit-transition: max-height 0.3s ease-out;
+    transition: max-height 0.3s ease-out;
     background-color: white;
     position: fixed;
     top: 63px;
@@ -683,7 +692,7 @@ footer a:hover {
     margin-right: 0;
   }
   .about .description-container .description {
-    margin-top: 3vw;
+    margin-top: 40px;
   }
 
   .contact .contact-form-socials {
@@ -701,7 +710,7 @@ footer a:hover {
     width: 100%;
     -ms-flex-item-align: center;
         align-self: center;
-    margin: 5vw 0;
+    margin: 40px 0;
   }
   .contact .contact-card {
     -ms-flex-item-align: center;
@@ -710,7 +719,7 @@ footer a:hover {
         -ms-flex: 0 1 auto;
             flex: 0 1 auto;
     margin-left: 0;
-    margin-bottom: 3vw;
+    margin-bottom: 40px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -720,7 +729,7 @@ footer a:hover {
             flex-direction: row;
   }
   .contact .contact-card .image {
-    margin-right: 5vw;
+    margin-right: 40px;
     max-width: 250px;
   }
   .contact .contact-card .contact-socials {
@@ -755,6 +764,6 @@ footer a:hover {
   }
   .contact .contact-card .image {
     margin-right: 0;
-    margin-bottom: 5vw;
+    margin-bottom: 40px;
   }
 }
