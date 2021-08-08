@@ -20,49 +20,53 @@
   <body>
     <div class="nav">
       <nav class="wrapper">
-        <p><span>Gavyn Holt</span> Web Developer</p>
-        <ul class="socials">
-          <li>
-            <a href="mailto:gavynholt@gmail.com"><i class="far fa-envelope"></i></a>
-          </li>
-          <li>
-            <a target="_blank" href="https://github.com/HoltGavyn"><i class="fab fa-github"></i></a>
-          </li>
-          <li>
-            <a target="_blank" href="https://www.linkedin.com/in/gavynholt/"><i class="fab fa-linkedin-in"></i></a>
-          </li>
-          <li>
-            <a target="_blank" href="https://twitter.com/HoltGavyn"><i class="fab fa-twitter"></i></a>
-          </li>
-        </ul>
+        <a href="#home"><span class="bold">Gavyn Holt</span> Web Developer</a>
+
+        <div class="nav-links-container">
+          <ul class="site-nav">
+            <li>
+              <a class="navLink active" href="#home"><span class="link-text">Home</span><i aria-label="Home" class="far fa-circle"></i></a>
+            </li>
+            <li>
+              <a class="navLink" href="#about"><span class="link-text">About</span><i aria-label="About" class="far fa-circle"></i></a>
+            </li>
+            <li>
+              <a class="navLink" href="#project-trivia-time"
+                ><span class="link-text">Trivia Time</span><i aria-label="Trivia Time" class="far fa-circle"></i
+              ></a>
+            </li>
+            <li>
+              <a class="navLink" href="#project-hang-man"><span class="link-text">Hang Man</span><i aria-label="Hang Man" class="far fa-circle"></i></a>
+            </li>
+            <li>
+              <a class="navLink" href="#project-the-recipe-wizard"
+                ><span class="link-text">The Recipe Wizard</span><i aria-label="The Recipe Wizard" class="far fa-circle"></i
+              ></a>
+            </li>
+            <li>
+              <a class="navLink" href="#contact"><span class="link-text">Contact</span><i aria-label="Contact" class="far fa-circle"></i></a>
+            </li>
+          </ul>
+          <ul class="socials">
+            <li>
+              <a href="mailto:gavynholt@gmail.com"><i class="far fa-envelope"></i></a>
+            </li>
+            <li>
+              <a target="_blank" href="https://github.com/HoltGavyn"><i class="fab fa-github"></i></a>
+            </li>
+            <li>
+              <a target="_blank" href="https://www.linkedin.com/in/gavynholt/"><i class="fab fa-linkedin-in"></i></a>
+            </li>
+            <li>
+              <a target="_blank" href="https://twitter.com/HoltGavyn"><i class="fab fa-twitter"></i></a>
+            </li>
+          </ul>
+        </div>
+        <div class="hamburger">
+          <i class="fas fa-bars"></i>
+        </div>
       </nav>
     </div>
-    <aside class="side-nav">
-      <nav>
-        <ul>
-          <li>
-            <a class="navLink active" href="#home"><span class="hide">Home</span><i aria-label="Home" class="far fa-circle"></i></a>
-          </li>
-          <li>
-            <a class="navLink" href="#about"><span class="hide">About</span><i aria-label="About" class="far fa-circle"></i></a>
-          </li>
-          <li>
-            <a class="navLink" href="#project-trivia-time"><span class="hide">Trivia Time</span><i aria-label="Trivia Time" class="far fa-circle"></i></a>
-          </li>
-          <li>
-            <a class="navLink" href="#project-hang-man"><span class="hide">Hang Man</span><i aria-label="Hang Man" class="far fa-circle"></i></a>
-          </li>
-          <li>
-            <a class="navLink" href="#project-the-recipe-wizard"
-              ><span class="hide">The Recipe Wizard</span><i aria-label="The Recipe Wizard" class="far fa-circle"></i
-            ></a>
-          </li>
-          <li>
-            <a class="navLink" href="#contact"><span class="hide">Contact</span><i aria-label="Contact" class="far fa-circle"></i></a>
-          </li>
-        </ul>
-      </nav>
-    </aside>
     <header id="home">
       <div class="wrapper">
         <div class="heading">
@@ -133,13 +137,11 @@
           </div>
           <div class="project-description">
             <h2>Trivia Time</h2>
-            <div class="skills">
-              <ul>
-                <li>React</li>
-                <li>SASS</li>
-                <li>Firebase</li>
-              </ul>
-            </div>
+            <ul class="skills">
+              <li>React</li>
+              <li>SASS</li>
+              <li>Firebase</li>
+            </ul>
             <div class="description">
               <p>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed eaque officiis inventore, repellendus dolorem quasi, omnis architecto quas,
@@ -165,14 +167,12 @@
           </div>
           <div class="project-description">
             <h2>Hang Man</h2>
-            <div class="skills">
-              <ul>
-                <li>React</li>
-                <li>SASS</li>
-                <li>Firebase</li>
-                <li>RESTful API</li>
-              </ul>
-            </div>
+            <ul class="skills">
+              <li>React</li>
+              <li>SASS</li>
+              <li>Firebase</li>
+              <li>RESTful API</li>
+            </ul>
             <div class="description">
               <p>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed eaque officiis inventore, repellendus dolorem quasi, omnis architecto quas,
@@ -198,14 +198,12 @@
           </div>
           <div class="project-description">
             <h2>The Recipe Wizard</h2>
-            <div class="skills">
-              <ul>
-                <li>HTML5</li>
-                <li>Javascript (ES6)</li>
-                <li>SASS</li>
-                <li>RESTful API</li>
-              </ul>
-            </div>
+            <ul class="skills">
+              <li>HTML5</li>
+              <li>Javascript (ES6)</li>
+              <li>SASS</li>
+              <li>RESTful API</li>
+            </ul>
             <div class="description">
               <p>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed eaque officiis inventore, repellendus dolorem quasi, omnis architecto quas,
@@ -227,7 +225,7 @@
       <section class="contact" id="contact">
         <div class="wrapper">
           <div class="contact-container">
-            <h2>Drop A Note</h2>
+            <h2>Drop a note</h2>
             <p>
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore ipsum et obcaecati dicta voluptatem vel tempora. Minima facilis velit vitae ut
               cumque, tenetur laborum, eum recusandae explicabo voluptate suscipit vel corrupti fuga hic culpa quo rem? Fugit, repudiandae voluptatibus!
@@ -244,7 +242,7 @@
                 </div>
                 <div class="form-container">
                   <label for="message">Message:</label>
-                  <textarea id="message" name="message" required> </textarea>
+                  <textarea id="message" name="message" placeholder="Your message here..." required></textarea>
                 </div>
                 <button class="button-link" type="submit">Send</button>
               </form>
@@ -254,16 +252,16 @@
                 </div>
                 <ul class="contact-socials">
                   <li>
-                    <a href="mailto:gavynholt@gmail.com"><i class="far fa-envelope"></i>&ensp;gavynholt@gmail.com</a>
+                    <a href="mailto:gavynholt@gmail.com"><i class="far fa-envelope">&ensp;</i>gavynholt@gmail.com</a>
                   </li>
                   <li>
-                    <a target="_blank" href="https://github.com/HoltGavyn"><i class="fab fa-github"></i>&ensp;HoltGavyn</a>
+                    <a target="_blank" href="https://github.com/HoltGavyn"><i class="fab fa-github">&ensp;</i>HoltGavyn</a>
                   </li>
                   <li>
-                    <a target="_blank" href="https://www.linkedin.com/in/gavynholt/"><i class="fab fa-linkedin-in"></i>&ensp;gavynholt</a>
+                    <a target="_blank" href="https://www.linkedin.com/in/gavynholt/"><i class="fab fa-linkedin-in">&ensp;</i>gavynholt</a>
                   </li>
                   <li>
-                    <a target="_blank" href="https://twitter.com/HoltGavyn"><i class="fab fa-twitter"></i>&ensp;@HoltGavyn</a>
+                    <a target="_blank" href="https://twitter.com/HoltGavyn"><i class="fab fa-twitter">&ensp;</i>@HoltGavyn</a>
                   </li>
                 </ul>
               </div>

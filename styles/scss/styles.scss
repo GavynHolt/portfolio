@@ -50,11 +50,16 @@ a {
   text-decoration: none;
 }
 
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+
 /* Navigation Menu Styles */
 
 .nav {
   background-color: white;
-  opacity: 85%;
+  opacity: 95%;
   box-shadow: 2px 2px 10px rgba($color: #000000, $alpha: 0.25);
   position: fixed;
   top: 0;
@@ -65,12 +70,13 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 20px 0;
     font-size: 2rem;
     font-family: $fontHeader;
-    span {
+    .bold {
       font-weight: 700;
     }
-    ul {
+    .socials {
       display: flex;
       li {
         margin: 0 10px;
@@ -81,40 +87,51 @@ a {
       li:last-child {
         margin-right: 0;
       }
+      a:hover,
+      a:focus {
+        color: $aboutSectionColor;
+      }
     }
-  }
-}
-
-.side-nav {
-  position: fixed;
-  top: 50%;
-  right: 25px;
-  transform: translateY(-50%);
-  a {
-    position: relative;
-    outline: none;
-  }
-  span {
-    position: absolute;
-    right: 20px;
-    top: 0;
-    white-space: nowrap;
-  }
-  a:hover::after,
-  a:focus::after,
-  a.active::after {
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 900;
-    content: '\f111';
-    position: absolute;
-    inset: 0;
-  }
-  .hide {
-    display: none;
-  }
-  a:hover .hide,
-  a:focus .hide {
-    display: inherit;
+    .site-nav {
+      font-size: 1.6rem;
+      font-family: $fontBody;
+      position: fixed;
+      top: 50%;
+      right: 25px;
+      transform: translateY(-50%);
+      a {
+        position: relative;
+        outline: none;
+      }
+      span {
+        position: absolute;
+        right: 20px;
+        top: 0;
+        white-space: nowrap;
+      }
+      a:hover::after,
+      a:focus::after,
+      a.active::after {
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        content: '\f111';
+        position: absolute;
+        inset: 0;
+      }
+      .link-text {
+        display: none;
+      }
+      a:hover .link-text,
+      a:focus .link-text {
+        display: inherit;
+      }
+    }
+    .hamburger {
+      position: absolute;
+      height: 0;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
   }
 }
 
@@ -137,7 +154,7 @@ header {
 section {
   min-height: 100vh;
   padding-top: 120px;
-  padding-bottom: 8vw;
+  padding-bottom: 120px;
 }
 
 .button-link {
@@ -199,7 +216,6 @@ section {
     max-width: 800px;
     margin: 3vw auto 0;
     ul {
-      display: flex;
       margin-top: 40px;
       li {
         margin: 0 20px;
@@ -209,10 +225,16 @@ section {
       }
     }
     .skills {
+      display: flex;
+      flex-wrap: wrap;
       font-style: italic;
     }
     .description {
       line-height: 2.25rem;
+    }
+    .links {
+      display: flex;
+      text-align: center;
     }
   }
   .project-image {
@@ -266,12 +288,22 @@ section {
       font-weight: 700;
     }
     input {
-      padding-left: 5px;
-      line-height: 2.5rem;
     }
     textarea {
       min-height: 200px;
+    }
+    input,
+    textarea {
       line-height: 2.5rem;
+      padding-left: 5px;
+      background-color: $headerColor;
+      border: 1px solid black;
+      // border-radius: 5px;
+    }
+
+    input:focus,
+    textarea:focus {
+      background-color: #ddefff;
     }
   }
   .contact-card {
@@ -287,6 +319,7 @@ section {
     }
     .contact-socials {
       margin-top: 20px;
+      white-space: nowrap;
       a {
         line-height: 2.5rem;
       }
@@ -306,8 +339,64 @@ footer {
   .wrapper {
     width: 90%;
   }
-  .side-nav {
-    display: none;
+  .nav {
+    nav {
+      .showNav.nav-links-container {
+        height: auto;
+        overflow: auto;
+      }
+      .nav-links-container {
+        height: 0;
+        overflow: hidden;
+        background-color: white;
+        position: fixed;
+        top: 63px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 10;
+      }
+      .site-nav {
+        text-align: center;
+        transform: none;
+        position: static;
+        a {
+          position: inherit;
+          font-size: 5rem;
+          font-family: $fontHeader;
+          font-weight: 700;
+        }
+        li {
+          margin: 3rem 0;
+        }
+        span {
+          position: inherit;
+        }
+        .fa-circle {
+          display: none;
+        }
+        a:hover::after,
+        a:focus::after,
+        a.active::after {
+          display: none;
+        }
+        .link-text {
+          display: inherit;
+        }
+      }
+      .socials {
+        font-size: 3rem;
+        justify-content: center;
+        li {
+          margin: 0 15px;
+        }
+      }
+      .hamburger {
+        position: inherit;
+        height: auto;
+        overflow: auto;
+      }
+    }
   }
   .about {
     .about-container {
@@ -366,8 +455,17 @@ footer {
 }
 
 @media (max-width: 480px) {
-  .wrapper {
-    width: 95%;
+  .nav {
+    nav {
+      .site-nav {
+        a {
+          font-size: calc(-0.28rem + 11vw);
+        }
+      }
+      .socials {
+        font-size: calc(0.6rem + 5vw);
+      }
+    }
   }
   .contact {
     .contact-card {
