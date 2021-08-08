@@ -140,6 +140,14 @@ section {
   padding-bottom: 120px;
 }
 
+.buttonLink {
+  display: inline-block;
+  font-weight: 700;
+  border: 1px solid black;
+  padding: 8px 12px;
+  background-color: transparent;
+}
+
 .about {
   background-color: $aboutSectionColor;
   .about-container {
@@ -147,13 +155,13 @@ section {
     .image {
       flex: 1 1 400px;
       align-self: start;
-      clip-path: circle(125px);
+      // clip-path: circle(125px);
       margin-right: 5vw;
       img {
         width: 100%;
-        height: 100%;
-        object-position: 50% -10px;
-        object-fit: cover;
+        // height: 100%;
+        // object-position: 50% -10px;
+        // object-fit: cover;
       }
     }
     .description-container {
@@ -200,13 +208,11 @@ section {
         margin-left: 0;
       }
     }
-    .links {
-      a {
-        display: inline-block;
-        font-weight: 700;
-        border: 1px solid black;
-        padding: 8px 12px;
-      }
+    .skills {
+      font-style: italic;
+    }
+    .description {
+      line-height: 2.25rem;
     }
   }
   .project-image {
@@ -237,9 +243,52 @@ section {
   h2 {
     font-size: 5rem;
   }
-  .contact-container {
+  .contactContainer {
     max-width: 800px;
     margin: 0 auto;
+    p {
+      line-height: 2.25rem;
+    }
+  }
+  .contactFormSocials {
+    display: flex;
+    margin: 40px 0;
+  }
+  form {
+    flex: 1 1 500px;
+    .formContainer {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 20px;
+    }
+    label {
+      line-height: 2.5rem;
+      font-weight: 700;
+    }
+    input {
+      padding-left: 5px;
+      line-height: 2.5rem;
+    }
+    textarea {
+      min-height: 200px;
+      line-height: 2.5rem;
+    }
+  }
+  .contactCard {
+    flex: 1 1 300px;
+    margin-left: 5vw;
+    .image {
+      img {
+        max-height: 300px;
+        object-fit: contain;
+      }
+    }
+    .contactSocials {
+      margin-top: 20px;
+      a {
+        line-height: 2.5rem;
+      }
+    }
   }
 }
 
