@@ -29,7 +29,7 @@ h1 {
   font-size: 10rem;
   margin: 0;
   span {
-    font-size: 5rem;
+    font-size: 0.5em;
   }
 }
 
@@ -137,10 +137,10 @@ header {
 section {
   min-height: 100vh;
   padding-top: 120px;
-  padding-bottom: 120px;
+  padding-bottom: 8vw;
 }
 
-.buttonLink {
+.button-link {
   display: inline-block;
   font-weight: 700;
   border: 1px solid black;
@@ -153,7 +153,7 @@ section {
   .about-container {
     display: flex;
     .image {
-      flex: 1 1 400px;
+      flex: 0 1 400px;
       align-self: start;
       // clip-path: circle(125px);
       margin-right: 5vw;
@@ -165,7 +165,7 @@ section {
       }
     }
     .description-container {
-      flex: 1 1 800px;
+      flex: 0 1 800px;
       .description {
         p {
           font-size: 2rem;
@@ -243,20 +243,20 @@ section {
   h2 {
     font-size: 5rem;
   }
-  .contactContainer {
+  .contact-container {
     max-width: 800px;
     margin: 0 auto;
     p {
       line-height: 2.25rem;
     }
   }
-  .contactFormSocials {
+  .contact-form-socials {
     display: flex;
     margin: 40px 0;
   }
   form {
     flex: 1 1 500px;
-    .formContainer {
+    .form-container {
       display: flex;
       flex-direction: column;
       margin-bottom: 20px;
@@ -274,16 +274,18 @@ section {
       line-height: 2.5rem;
     }
   }
-  .contactCard {
+  .contact-card {
     flex: 1 1 300px;
     margin-left: 5vw;
     .image {
+      max-width: 300px;
       img {
-        max-height: 300px;
+        width: 100%;
+        height: auto;
         object-fit: contain;
       }
     }
-    .contactSocials {
+    .contact-socials {
       margin-top: 20px;
       a {
         line-height: 2.5rem;
@@ -297,5 +299,84 @@ footer {
   text-align: center;
   a:hover {
     text-decoration: underline;
+  }
+}
+
+@media (max-width: 1000px) {
+  .wrapper {
+    width: 90%;
+  }
+  .side-nav {
+    display: none;
+  }
+  .about {
+    .about-container {
+      flex-direction: column;
+      .image {
+        max-width: 300px;
+        flex: 0 1 auto;
+        align-self: center;
+        margin-right: 0;
+      }
+    }
+    .description-container {
+      .description {
+        margin-top: 3vw;
+      }
+    }
+  }
+  .contact {
+    .contact-form-socials {
+      flex-direction: column;
+      margin: 0;
+    }
+    form {
+      flex: 0 1 auto;
+      max-width: 600px;
+      width: 100%;
+      align-self: center;
+      margin: 5vw 0;
+    }
+    .contact-card {
+      align-self: center;
+      flex: 0 1 auto;
+      margin-left: 0;
+      margin-bottom: 3vw;
+      display: flex;
+      flex-direction: row;
+      .image {
+        margin-right: 5vw;
+        max-width: 250px;
+      }
+      .contact-socials {
+        margin-top: 0;
+        align-self: center;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: calc(2.32rem + 10vw);
+  }
+  h2 {
+    font-size: calc(0.32rem + 10vw);
+  }
+}
+
+@media (max-width: 480px) {
+  .wrapper {
+    width: 95%;
+  }
+  .contact {
+    .contact-card {
+      flex-direction: column;
+      margin-bottom: 0;
+      .image {
+        margin-right: 0;
+        margin-bottom: 5vw;
+      }
+    }
   }
 }

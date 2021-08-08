@@ -265,7 +265,7 @@ h1 {
   margin: 0;
 }
 h1 span {
-  font-size: 5rem;
+  font-size: 0.5em;
 }
 
 h2 {
@@ -387,10 +387,10 @@ header .heading {
 section {
   min-height: 100vh;
   padding-top: 120px;
-  padding-bottom: 120px;
+  padding-bottom: 8vw;
 }
 
-.buttonLink {
+.button-link {
   display: inline-block;
   font-weight: 700;
   border: 1px solid black;
@@ -407,9 +407,9 @@ section {
   display: flex;
 }
 .about .about-container .image {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 400px;
-          flex: 1 1 400px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 400px;
+          flex: 0 1 400px;
   -ms-flex-item-align: start;
       align-self: start;
   margin-right: 5vw;
@@ -418,9 +418,9 @@ section {
   width: 100%;
 }
 .about .about-container .description-container {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 800px;
-          flex: 1 1 800px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 800px;
+          flex: 0 1 800px;
 }
 .about .about-container .description-container .description {
   margin-bottom: 3vw;
@@ -500,14 +500,14 @@ section {
 .contact h2 {
   font-size: 5rem;
 }
-.contact .contactContainer {
+.contact .contact-container {
   max-width: 800px;
   margin: 0 auto;
 }
-.contact .contactContainer p {
+.contact .contact-container p {
   line-height: 2.25rem;
 }
-.contact .contactFormSocials {
+.contact .contact-form-socials {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -518,7 +518,7 @@ section {
       -ms-flex: 1 1 500px;
           flex: 1 1 500px;
 }
-.contact form .formContainer {
+.contact form .form-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -540,21 +540,25 @@ section {
   min-height: 200px;
   line-height: 2.5rem;
 }
-.contact .contactCard {
+.contact .contact-card {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 300px;
           flex: 1 1 300px;
   margin-left: 5vw;
 }
-.contact .contactCard .image img {
-  max-height: 300px;
+.contact .contact-card .image {
+  max-width: 300px;
+}
+.contact .contact-card .image img {
+  width: 100%;
+  height: auto;
   -o-object-fit: contain;
      object-fit: contain;
 }
-.contact .contactCard .contactSocials {
+.contact .contact-card .contact-socials {
   margin-top: 20px;
 }
-.contact .contactCard .contactSocials a {
+.contact .contact-card .contact-socials a {
   line-height: 2.5rem;
 }
 
@@ -564,4 +568,102 @@ footer {
 }
 footer a:hover {
   text-decoration: underline;
+}
+
+@media (max-width: 1000px) {
+  .wrapper {
+    width: 90%;
+  }
+
+  .side-nav {
+    display: none;
+  }
+
+  .about .about-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .about .about-container .image {
+    max-width: 300px;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 auto;
+            flex: 0 1 auto;
+    -ms-flex-item-align: center;
+        align-self: center;
+    margin-right: 0;
+  }
+  .about .description-container .description {
+    margin-top: 3vw;
+  }
+
+  .contact .contact-form-socials {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: 0;
+  }
+  .contact form {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 auto;
+            flex: 0 1 auto;
+    max-width: 600px;
+    width: 100%;
+    -ms-flex-item-align: center;
+        align-self: center;
+    margin: 5vw 0;
+  }
+  .contact .contact-card {
+    -ms-flex-item-align: center;
+        align-self: center;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 auto;
+            flex: 0 1 auto;
+    margin-left: 0;
+    margin-bottom: 3vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .contact .contact-card .image {
+    margin-right: 5vw;
+    max-width: 250px;
+  }
+  .contact .contact-card .contact-socials {
+    margin-top: 0;
+    -ms-flex-item-align: center;
+        align-self: center;
+  }
+}
+@media (max-width: 768px) {
+  h1 {
+    font-size: calc(2.32rem + 10vw);
+  }
+
+  h2 {
+    font-size: calc(0.32rem + 10vw);
+  }
+}
+@media (max-width: 480px) {
+  .wrapper {
+    width: 95%;
+  }
+
+  .contact .contact-card {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-bottom: 0;
+  }
+  .contact .contact-card .image {
+    margin-right: 0;
+    margin-bottom: 5vw;
+  }
 }

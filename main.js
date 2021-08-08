@@ -13,9 +13,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (currentScrollY >= hrefElementPosition - navHeightOffset) {
         link.classList.add('active');
-        // remove active class from one index higher and lower, if they exist
-        navLinks[index + 1]?.classList.remove('active');
-        navLinks[index - 1]?.classList.remove('active');
+        for ([removeIndex, link] of navLinks.entries()) {
+          if (removeIndex !== index) {
+            navLinks[removeIndex].classList.remove('active');
+          }
+        }
       }
     }
   });

@@ -37,6 +37,32 @@
         </ul>
       </nav>
     </div>
+    <aside class="side-nav">
+      <nav>
+        <ul>
+          <li>
+            <a class="navLink active" href="#home"><span class="hide">Home</span><i aria-label="Home" class="far fa-circle"></i></a>
+          </li>
+          <li>
+            <a class="navLink" href="#about"><span class="hide">About</span><i aria-label="About" class="far fa-circle"></i></a>
+          </li>
+          <li>
+            <a class="navLink" href="#project-trivia-time"><span class="hide">Trivia Time</span><i aria-label="Trivia Time" class="far fa-circle"></i></a>
+          </li>
+          <li>
+            <a class="navLink" href="#project-hang-man"><span class="hide">Hang Man</span><i aria-label="Hang Man" class="far fa-circle"></i></a>
+          </li>
+          <li>
+            <a class="navLink" href="#project-the-recipe-wizard"
+              ><span class="hide">The Recipe Wizard</span><i aria-label="The Recipe Wizard" class="far fa-circle"></i
+            ></a>
+          </li>
+          <li>
+            <a class="navLink" href="#contact"><span class="hide">Contact</span><i aria-label="Contact" class="far fa-circle"></i></a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
     <header id="home">
       <div class="wrapper">
         <div class="heading">
@@ -125,8 +151,8 @@
               </p>
             </div>
             <ul class="links">
-              <li><a class="buttonLink" href="https://triviatimecollective.netlify.app/">Visit Project</a></li>
-              <li><a class="buttonLink" href="https://github.com/triviaTimeCollective/triviaTime">View on GitHub</a></li>
+              <li><a class="button-link" href="https://triviatimecollective.netlify.app/">Visit Project</a></li>
+              <li><a class="button-link" href="https://github.com/triviaTimeCollective/triviaTime">View on GitHub</a></li>
             </ul>
           </div>
         </div>
@@ -158,8 +184,8 @@
               </p>
             </div>
             <ul class="links">
-              <li><a class="buttonLink" href="https://hangmanreactgame.netlify.app/">Visit Project</a></li>
-              <li><a class="buttonLink" href="https://github.com/HoltGavyn/hangMan">View on GitHub</a></li>
+              <li><a class="button-link" href="https://hangmanreactgame.netlify.app/">Visit Project</a></li>
+              <li><a class="button-link" href="https://github.com/HoltGavyn/hangMan">View on GitHub</a></li>
             </ul>
           </div>
         </div>
@@ -191,8 +217,8 @@
               </p>
             </div>
             <ul class="links">
-              <li><a class="buttonLink" href="https://therecipewizard.netlify.app/">Visit Project</a></li>
-              <li><a class="buttonLink" href="https://github.com/JunoCollegeProjects/theRecipeWizard">View on GitHub</a></li>
+              <li><a class="button-link" href="https://therecipewizard.netlify.app/">Visit Project</a></li>
+              <li><a class="button-link" href="https://github.com/JunoCollegeProjects/theRecipeWizard">View on GitHub</a></li>
             </ul>
           </div>
         </div>
@@ -200,33 +226,33 @@
 
       <section class="contact" id="contact">
         <div class="wrapper">
-          <div class="contactContainer">
-            <h2>Contact Me</h2>
+          <div class="contact-container">
+            <h2>Drop A Note</h2>
             <p>
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore ipsum et obcaecati dicta voluptatem vel tempora. Minima facilis velit vitae ut
               cumque, tenetur laborum, eum recusandae explicabo voluptate suscipit vel corrupti fuga hic culpa quo rem? Fugit, repudiandae voluptatibus!
             </p>
-            <div class="contactFormSocials">
-              <form>
-                <div class="formContainer">
+            <div class="contact-form-socials">
+              <form action="https://formspree.io/f/mpzkyeag" method="POST">
+                <div class="form-container">
                   <label for="name">Name:</label>
-                  <input type="text" id="name" placeholder="Name" />
+                  <input type="text" id="name" name="name" placeholder="Name" required />
                 </div>
-                <div class="formContainer">
+                <div class="form-container">
                   <label for="email">Email:</label>
-                  <input type="text" id="name" placeholder="Email" />
+                  <input type="text" id="name" name="email" placeholder="Email" required />
                 </div>
-                <div class="formContainer">
+                <div class="form-container">
                   <label for="message">Message:</label>
-                  <textarea id="message"> </textarea>
+                  <textarea id="message" name="message" required> </textarea>
                 </div>
-                <button class="buttonLink" type="submit">Send</button>
+                <button class="button-link" type="submit">Send</button>
               </form>
-              <div class="contactCard">
+              <div class="contact-card">
                 <div class="image">
                   <img src="./images/gavynHoltMail.png" alt="Contact Card image of Gavyn Holt" />
                 </div>
-                <ul class="contactSocials">
+                <ul class="contact-socials">
                   <li>
                     <a href="mailto:gavynholt@gmail.com"><i class="far fa-envelope"></i>&ensp;gavynholt@gmail.com</a>
                   </li>
@@ -249,33 +275,6 @@
     <footer class="wrapper">
       <p>&copy Gavyn Holt, 2021. Developed by Gavyn Holt, Designed by <a target="_blank" href="https://www.jacquelinewong.ca">Jacqueline Wong</a>.</p>
     </footer>
-
-    <aside class="side-nav">
-      <nav>
-        <ul>
-          <li>
-            <a class="navLink active" href="#home"><span class="hide">Home</span><i aria-label="Home" class="far fa-circle"></i></a>
-          </li>
-          <li>
-            <a class="navLink" href="#about"><span class="hide">About</span><i aria-label="About" class="far fa-circle"></i></a>
-          </li>
-          <li>
-            <a class="navLink" href="#project-trivia-time"><span class="hide">Trivia Time</span><i aria-label="Trivia Time" class="far fa-circle"></i></a>
-          </li>
-          <li>
-            <a class="navLink" href="#project-hang-man"><span class="hide">Hang Man</span><i aria-label="Hang Man" class="far fa-circle"></i></a>
-          </li>
-          <li>
-            <a class="navLink" href="#project-the-recipe-wizard"
-              ><span class="hide">The Recipe Wizard</span><i aria-label="The Recipe Wizard" class="far fa-circle"></i
-            ></a>
-          </li>
-          <li>
-            <a class="navLink" href="#contact"><span class="hide">Contact</span><i aria-label="Contact" class="far fa-circle"></i></a>
-          </li>
-        </ul>
-      </nav>
-    </aside>
     <script src="./main.js"></script>
   </body>
 </html>
