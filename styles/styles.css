@@ -285,6 +285,11 @@ a {
   text-decoration: none;
 }
 
+a:hover,
+a:focus {
+  outline: none;
+}
+
 .underline {
   position: relative;
 }
@@ -360,6 +365,9 @@ a:focus .underline::after {
   right: 25px;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
+}
+.nav nav .site-nav li {
+  margin: 0.5em 0;
 }
 .nav nav .site-nav a {
   position: relative;
@@ -689,8 +697,8 @@ footer {
   .nav nav .site-nav .navLink:hover .link-text::after,
 .nav nav .site-nav .navLink:focus .link-text::after {
     width: 100%;
-    -webkit-transition: 0.5s ease;
-    transition: 0.5s ease;
+    -webkit-transition: 0.3s ease;
+    transition: 0.3s ease;
   }
   .nav nav .socials {
     font-size: 3rem;
@@ -705,6 +713,9 @@ footer {
     position: inherit;
     height: auto;
     overflow: auto;
+  }
+  .nav nav .hamburger .hide {
+    display: none;
   }
 
   .about .about-container {

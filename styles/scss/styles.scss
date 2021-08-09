@@ -50,10 +50,10 @@ a {
   text-decoration: none;
 }
 
-// a:hover,
-// a:focus {
-//   text-decoration: underline;
-// }
+a:hover,
+a:focus {
+  outline: none;
+}
 
 .underline {
   position: relative;
@@ -118,6 +118,9 @@ a:focus .underline::after {
       top: 50%;
       right: 25px;
       transform: translateY(-50%);
+      li {
+        margin: 0.5em 0;
+      }
       a {
         position: relative;
         outline: none;
@@ -419,7 +422,7 @@ footer {
         .navLink:hover .link-text::after,
         .navLink:focus .link-text::after {
           width: 100%;
-          transition: 0.5s ease;
+          transition: 0.3s ease;
         }
       }
       .socials {
@@ -433,6 +436,9 @@ footer {
         position: inherit;
         height: auto;
         overflow: auto;
+        .hide {
+          display: none;
+        }
       }
     }
   }

@@ -29,13 +29,8 @@ document.addEventListener('DOMContentLoaded', () => {
   hamburgerButton.addEventListener('click', () => {
     const navLinksContainer = document.querySelector('.nav-links-container');
     navLinksContainer.classList.toggle('showNav');
-    // //add focus to current page section
-    // const navLinks = document.querySelectorAll('.navLink');
-    // for (link of navLinks) {
-    //   if (link.classList.contains('active')) {
-    //     link.focus();
-    //   }
-    // }
+    document.querySelector('.fa-bars').classList.toggle('hide');
+    document.querySelector('.fa-times').classList.toggle('hide');
   });
 
   // Close Hamburger on anchor tag click event listener
