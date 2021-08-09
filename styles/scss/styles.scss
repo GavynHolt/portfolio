@@ -50,9 +50,28 @@ a {
   text-decoration: none;
 }
 
-a:hover,
-a:focus {
-  text-decoration: underline;
+// a:hover,
+// a:focus {
+//   text-decoration: underline;
+// }
+
+.underline {
+  position: relative;
+}
+
+.underline::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 0;
+  bottom: 0;
+  border-bottom: 1px solid black;
+}
+
+a:hover .underline::after,
+a:focus .underline::after {
+  width: 100%;
+  transition: 0.5s ease;
 }
 
 /* Navigation Menu Styles */
@@ -89,7 +108,7 @@ a:focus {
       }
       a:hover,
       a:focus {
-        color: $aboutSectionColor;
+        color: $socialsHoverColor;
       }
     }
     .site-nav {
@@ -212,7 +231,6 @@ section {
     max-width: 800px;
     margin: 40px auto 0;
     ul {
-      margin-top: 40px;
       li {
         margin: 0 20px;
       }
@@ -223,19 +241,26 @@ section {
     .skills {
       display: flex;
       flex-wrap: wrap;
+      margin-top: 20px;
       li {
-        border: 1px solid black;
-        border-radius: 10px;
-        padding: 4px 6px;
-        margin: 0 5px;
+        border: 1px solid $darkGrey;
+        color: $darkGrey;
+        font-size: 1.25rem;
+        border-radius: 15px;
+        padding: 4px 12px;
+        margin: 5px;
       }
     }
     .description {
       line-height: 2.25rem;
+      p {
+        margin-top: 40px;
+      }
     }
     .links {
       display: flex;
       text-align: center;
+      margin-top: 40px;
     }
   }
   .project-image {
@@ -288,8 +313,6 @@ section {
       line-height: 2.5rem;
       font-weight: 700;
     }
-    input {
-    }
     textarea {
       min-height: 200px;
     }
@@ -331,9 +354,6 @@ section {
 footer {
   font-size: 1.2rem;
   text-align: center;
-  a:hover {
-    text-decoration: underline;
-  }
 }
 
 @media (max-width: 1000px) {
@@ -372,9 +392,6 @@ footer {
         li {
           margin: 3rem 0;
         }
-        span {
-          position: inherit;
-        }
         .fa-circle {
           display: none;
         }
@@ -383,8 +400,26 @@ footer {
         a.active::after {
           display: none;
         }
+        span {
+          right: auto;
+        }
         .link-text {
           display: inherit;
+          position: relative;
+        }
+
+        .link-text::after {
+          content: '';
+          position: absolute;
+          left: 0;
+          width: 0;
+          bottom: 10%;
+          border-bottom: 4px solid $socialsHoverColor;
+        }
+        .navLink:hover .link-text::after,
+        .navLink:focus .link-text::after {
+          width: 100%;
+          transition: 0.5s ease;
         }
       }
       .socials {

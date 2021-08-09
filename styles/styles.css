@@ -285,9 +285,24 @@ a {
   text-decoration: none;
 }
 
-a:hover,
-a:focus {
-  text-decoration: underline;
+.underline {
+  position: relative;
+}
+
+.underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 0;
+  bottom: 0;
+  border-bottom: 1px solid black;
+}
+
+a:hover .underline::after,
+a:focus .underline::after {
+  width: 100%;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
 }
 
 /* Navigation Menu Styles */
@@ -335,7 +350,7 @@ a:focus {
 }
 .nav nav .socials a:hover,
 .nav nav .socials a:focus {
-  color: #97ccde;
+  color: #50768b;
 }
 .nav nav .site-nav {
   font-size: 1.6rem;
@@ -382,7 +397,7 @@ a:focus {
 
 /* Header Styles */
 header {
-  background-color: #bbe6f6;
+  background-color: #bbe6f5;
   min-height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -417,7 +432,7 @@ section {
 }
 
 .about {
-  background-color: #97ccde;
+  background-color: #97cbde;
 }
 .about .about-container {
   display: -webkit-box;
@@ -470,9 +485,6 @@ section {
   max-width: 800px;
   margin: 40px auto 0;
 }
-.project-container .project-description ul {
-  margin-top: 40px;
-}
 .project-container .project-description ul li {
   margin: 0 20px;
 }
@@ -485,21 +497,28 @@ section {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  margin-top: 20px;
 }
 .project-container .project-description .skills li {
-  border: 1px solid black;
-  border-radius: 10px;
-  padding: 4px 6px;
-  margin: 0 5px;
+  border: 1px solid #3d3d3d;
+  color: #3d3d3d;
+  font-size: 1.25rem;
+  border-radius: 15px;
+  padding: 4px 12px;
+  margin: 5px;
 }
 .project-container .project-description .description {
   line-height: 2.25rem;
+}
+.project-container .project-description .description p {
+  margin-top: 40px;
 }
 .project-container .project-description .links {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   text-align: center;
+  margin-top: 40px;
 }
 .project-container .project-image {
   -ms-flex-item-align: center;
@@ -514,7 +533,7 @@ section {
 }
 
 .project-trivia-time {
-  background-color: #b3a6c0;
+  background-color: #b2a6c1;
 }
 
 .project-hang-man {
@@ -522,11 +541,11 @@ section {
 }
 
 .project-the-recipe-wizard {
-  background-color: #ddbd8c;
+  background-color: #ddbd8b;
 }
 
 .contact {
-  background-color: #97ccde;
+  background-color: #97cbde;
 }
 .contact h2 {
   font-size: 5rem;
@@ -570,7 +589,7 @@ section {
 .contact form textarea {
   line-height: 2.5rem;
   padding-left: 5px;
-  background-color: #bbe6f6;
+  background-color: #bbe6f5;
   border: 1px solid black;
 }
 .contact form input:focus,
@@ -603,9 +622,6 @@ section {
 footer {
   font-size: 1.2rem;
   text-align: center;
-}
-footer a:hover {
-  text-decoration: underline;
 }
 
 @media (max-width: 1000px) {
@@ -647,9 +663,6 @@ footer a:hover {
   .nav nav .site-nav li {
     margin: 3rem 0;
   }
-  .nav nav .site-nav span {
-    position: inherit;
-  }
   .nav nav .site-nav .fa-circle {
     display: none;
   }
@@ -658,8 +671,26 @@ footer a:hover {
 .nav nav .site-nav a.active::after {
     display: none;
   }
+  .nav nav .site-nav span {
+    right: auto;
+  }
   .nav nav .site-nav .link-text {
     display: inherit;
+    position: relative;
+  }
+  .nav nav .site-nav .link-text::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 0;
+    bottom: 10%;
+    border-bottom: 4px solid #50768b;
+  }
+  .nav nav .site-nav .navLink:hover .link-text::after,
+.nav nav .site-nav .navLink:focus .link-text::after {
+    width: 100%;
+    -webkit-transition: 0.5s ease;
+    transition: 0.5s ease;
   }
   .nav nav .socials {
     font-size: 3rem;
