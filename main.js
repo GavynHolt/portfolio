@@ -28,16 +28,28 @@ document.addEventListener('DOMContentLoaded', () => {
   const hamburgerButton = document.querySelector('.hamburger');
   hamburgerButton.addEventListener('click', () => {
     const navLinksContainer = document.querySelector('.nav-links-container');
-    navLinksContainer.classList.toggle('showNav');
-    document.querySelector('.fa-bars').classList.toggle('hide');
-    document.querySelector('.fa-times').classList.toggle('hide');
+    const navBar = document.querySelector('.fa-bars');
+    const navClose = document.querySelector('.fa-times');
+    if (!navLinksContainer.classList.contains('showNav')) {
+      navLinksContainer.classList.add('showNav');
+      navBar.classList.add('hide');
+      navClose.classList.remove('hide');
+    } else {
+      navLinksContainer.classList.remove('showNav');
+      navBar.classList.remove('hide');
+      navClose.classList.add('hide');
+    }
   });
 
   // Close Hamburger on anchor tag click event listener
   for (link of navLinks) {
     link.addEventListener('click', () => {
       const navLinksContainer = document.querySelector('.nav-links-container');
+      const navBar = document.querySelector('.fa-bars');
+      const navClose = document.querySelector('.fa-times');
       navLinksContainer.classList.remove('showNav');
+      navBar.classList.remove('hide');
+      navClose.classList.add('hide');
     });
   }
 });
