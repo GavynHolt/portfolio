@@ -178,7 +178,7 @@ header {
   }
   .down-arrow {
     position: absolute;
-    bottom: 5%;
+    bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
     font-size: 5rem;
@@ -515,6 +515,11 @@ footer {
           display: none;
         }
       }
+    }
+  }
+  header {
+    .down-arrow {
+      bottom: 15%;
     }
   }
   .about {
