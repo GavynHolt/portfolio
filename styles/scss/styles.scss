@@ -1,10 +1,6 @@
 @import 'setup';
 @import 'variables';
 
-// * {
-//   border: 1px solid red;
-// }
-
 /* General Styles */
 
 html {
@@ -226,7 +222,6 @@ section {
   border: 1px solid black;
   padding: 8px 12px;
   background-color: transparent;
-  // background: linear-gradient(to right, black 0%, transparent 0%);
   transition: 0.5s;
 }
 
@@ -390,7 +385,6 @@ section {
       padding-left: 5px;
       background-color: $headerColor;
       border: 1px solid black;
-      // border-radius: 5px;
     }
 
     input:focus,
