@@ -416,6 +416,7 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: relative;
 }
 header .heading {
   height: 100%;
@@ -428,6 +429,57 @@ header .heading {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+header .down-arrow {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  font-size: 5rem;
+  text-align: center;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-animation: fade-in 3s ease-in-out 2s 1 normal forwards;
+          animation: fade-in 3s ease-in-out 2s 1 normal forwards;
+}
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  20%, 50% {
+    opacity: 1;
+    font-size: 5rem;
+    pointer-events: inherit;
+  }
+  35% {
+    font-size: 6rem;
+    pointer-events: inherit;
+  }
+  100% {
+    font-size: 5rem;
+    opacity: 1;
+    pointer-events: inherit;
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  20%, 50% {
+    opacity: 1;
+    font-size: 5rem;
+    pointer-events: inherit;
+  }
+  35% {
+    font-size: 6rem;
+    pointer-events: inherit;
+  }
+  100% {
+    font-size: 5rem;
+    opacity: 1;
+    pointer-events: inherit;
+  }
 }
 
 /* Section Styles */
@@ -681,6 +733,8 @@ footer {
   .nav nav .nav-links-container {
     max-height: 0;
     overflow: hidden;
+    -webkit-transition: max-height 0.15s ease-out;
+    transition: max-height 0.15s ease-out;
     background-color: white;
     position: fixed;
     top: 63px;
@@ -688,6 +742,12 @@ footer {
     right: 0;
     bottom: 0;
     z-index: 10;
+  }
+  .nav nav .nav-links-container:focus-within {
+    max-height: 100vh;
+    overflow: auto;
+    -webkit-transition: max-height 0.3s ease-out;
+    transition: max-height 0.3s ease-out;
   }
   .nav nav .site-nav {
     text-align: center;
@@ -770,8 +830,16 @@ footer {
         align-self: center;
     margin-right: 0;
   }
-  .about .description-container .description {
+  .about .about-container .description-container .description {
     margin-top: 40px;
+  }
+  .about .about-container .description-container .skills {
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+  .about .about-container .description-container .skills .container {
+    width: auto;
   }
 
   .contact .contact-form-socials {

@@ -169,11 +169,46 @@ header {
   background-color: $headerColor;
   min-height: 100vh;
   display: flex;
+  position: relative;
   .heading {
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  .down-arrow {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 5rem;
+    text-align: center;
+    opacity: 0;
+    pointer-events: none;
+    animation: fade-in 3s ease-in-out 2s 1 normal forwards;
+  }
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+
+    20%,
+    50% {
+      opacity: 1;
+      font-size: 5rem;
+      pointer-events: inherit;
+    }
+
+    35% {
+      font-size: 6rem;
+      pointer-events: inherit;
+    }
+
+    100% {
+      font-size: 5rem;
+      opacity: 1;
+      pointer-events: inherit;
+    }
   }
 }
 
@@ -244,7 +279,6 @@ section {
         p {
           font-size: 2rem;
           line-height: 2.75rem;
-          // margin: 0;
         }
         margin-bottom: 40px;
       }
@@ -268,7 +302,6 @@ section {
 }
 
 .project-container {
-  // display: flex;
   .project-description {
     max-width: 800px;
     margin: 40px auto 0;
@@ -406,7 +439,7 @@ footer {
       .nav-links-container {
         max-height: 0;
         overflow: hidden;
-        // transition: max-height 0.15s ease-out;
+        transition: max-height 0.15s ease-out;
         background-color: white;
         position: fixed;
         top: 63px;
@@ -414,6 +447,11 @@ footer {
         right: 0;
         bottom: 0;
         z-index: 10;
+      }
+      .nav-links-container:focus-within {
+        max-height: 100vh;
+        overflow: auto;
+        transition: max-height 0.3s ease-out;
       }
       .site-nav {
         text-align: center;
@@ -488,10 +526,17 @@ footer {
         align-self: center;
         margin-right: 0;
       }
-    }
-    .description-container {
-      .description {
-        margin-top: 40px;
+
+      .description-container {
+        .description {
+          margin-top: 40px;
+        }
+        .skills {
+          justify-content: space-evenly;
+          .container {
+            width: auto;
+          }
+        }
       }
     }
   }
