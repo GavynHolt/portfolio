@@ -9,6 +9,7 @@
 
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -128,8 +129,13 @@ a:focus .underline::after {
       span {
         position: absolute;
         right: 20px;
-        top: 0;
+        top: -5px;
         white-space: nowrap;
+        display: inline-block;
+        padding: 4px 10px;
+        border-radius: 20px;
+        border: 1px solid black;
+        background-color: white;
       }
       a:hover::after,
       a:focus::after,
@@ -185,6 +191,36 @@ section {
   border: 1px solid black;
   padding: 8px 12px;
   background-color: transparent;
+  // background: linear-gradient(to right, black 0%, transparent 0%);
+  transition: 0.5s;
+}
+
+.button-link:focus {
+  outline: none;
+}
+
+.button-link:hover,
+.button-link:focus {
+  position: relative;
+  z-index: 5;
+  color: white;
+}
+
+.button-link::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: black;
+  width: 0%;
+  height: 100%;
+  z-index: -1;
+}
+
+.button-link:hover::after,
+.button-link:focus::after {
+  width: 100%;
+  transition: width 0.3s ease;
 }
 
 .about {
@@ -202,10 +238,13 @@ section {
     .description-container {
       flex: 0 1 800px;
       .description {
+        h2 {
+          font-size: 3rem;
+        }
         p {
           font-size: 2rem;
           line-height: 2.75rem;
-          margin: 0;
+          // margin: 0;
         }
         margin-bottom: 40px;
       }
@@ -233,37 +272,30 @@ section {
   .project-description {
     max-width: 800px;
     margin: 40px auto 0;
-    ul {
-      li {
-        margin: 0 20px;
-      }
-      li:first-child {
-        margin-left: 0;
-      }
-    }
     .skills {
       display: flex;
       flex-wrap: wrap;
       margin-top: 20px;
       li {
-        border: 1px solid $darkGrey;
         color: $darkGrey;
-        font-size: 1.25rem;
-        border-radius: 15px;
-        padding: 4px 12px;
-        margin: 5px;
+        margin-right: 15px;
+        margin-bottom: 5px;
+        font-weight: 700;
       }
     }
     .description {
       line-height: 2.25rem;
       p {
-        margin-top: 40px;
+        margin-top: 35px;
       }
     }
     .links {
       display: flex;
       text-align: center;
       margin-top: 40px;
+      li {
+        margin-right: 40px;
+      }
     }
   }
   .project-image {
@@ -330,11 +362,12 @@ section {
 
     input:focus,
     textarea:focus {
-      background-color: #ddefff;
+      background-color: $formBackgroundColor;
     }
   }
   .contact-card {
     flex: 1 1 300px;
+    margin-top: 10px;
     margin-left: 40px;
     .image {
       max-width: 300px;
@@ -373,7 +406,7 @@ footer {
       .nav-links-container {
         max-height: 0;
         overflow: hidden;
-        transition: max-height 0.3s ease-out;
+        // transition: max-height 0.15s ease-out;
         background-color: white;
         position: fixed;
         top: 63px;
@@ -405,6 +438,10 @@ footer {
         }
         span {
           right: auto;
+          display: inherit;
+          padding: 0;
+          border: none;
+          background-color: inherit;
         }
         .link-text {
           display: inherit;
@@ -474,7 +511,7 @@ footer {
       align-self: center;
       flex: 0 1 auto;
       margin-left: 0;
-      margin-bottom: 40px;
+      margin-top: 0;
       display: flex;
       flex-direction: row;
       .image {
