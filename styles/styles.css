@@ -827,6 +827,11 @@ footer {
   }
 }
 @media (max-width: 480px) {
+  .nav nav .mobile-hide {
+    height: 0;
+    overflow: hidden;
+    position: absolute;
+  }
   .nav nav .site-nav a {
     font-size: calc(-0.28rem + 11vw);
   }
