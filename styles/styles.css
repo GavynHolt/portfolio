@@ -432,7 +432,7 @@ header .heading {
 }
 header .down-arrow {
   position: absolute;
-  bottom: 10px;
+  bottom: 5%;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
