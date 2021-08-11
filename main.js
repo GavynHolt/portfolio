@@ -53,6 +53,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  const clearForm = () => {
+    document.getElementById('name').value = '';
+    document.getElementById('email').value = '';
+    document.getElementById('message').value = '';
+  };
   // Handle Form Submit
   const contactForm = document.querySelector('form');
 
@@ -73,6 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
       document.removeEventListener('keydown', ESCKeydownToClose);
       modalRoot.querySelector('.modal').remove();
       modalRoot.classList.remove('active');
+      clearForm();
     };
 
     const formData = new FormData(contactForm);
