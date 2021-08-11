@@ -53,6 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Function to clear form on closeModal()
   const clearForm = () => {
     document.getElementById('name').value = '';
     document.getElementById('email').value = '';
@@ -109,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
         modal.classList.add('modal');
         modal.innerHTML = `
           <h3>Message failed to send.</h3>
-          <p>Unfortunately an error occured:</p>
+          <p>Unfortunately an error occurred:</p>
           <p>${error.message}</p>
           <p>Please try again later or send me an email directly instead.</p>
           <button class="button-link">Close</button>
