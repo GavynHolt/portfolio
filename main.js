@@ -55,15 +55,66 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Handle Form Submit
   const contactForm = document.querySelector('form');
-  contactForm.addEventListener('submit', handleSubmit);
 
   handleSubmit = (e) => {
     e.preventDefault();
+    // cache some selectors
+    const modalRoot = document.querySelector('.modalRoot');
+
+    const ESCKeydownToClose = (e) => {
+      if (e.key.toLowerCase() === 'escape') {
+        closeModal();
+      }
+    };
+
+    const closeModal = () => {
+      const modalButton = modalRoot.querySelector('.button-link');
+      modalButton.removeEventListener('click', closeModal);
+      document.removeEventListener('keydown', ESCKeydownToClose);
+      modalRoot.querySelector('.modal').remove();
+      modalRoot.classList.remove('active');
+    };
+
     const formData = new FormData(contactForm);
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: new URLSearchParams(formData).toString(),
-    }).then(() => console.log('form successfully submitted'));
+    })
+      .then(() => {
+        modalRoot.classList.add('active');
+        const modal = document.createElement('div');
+        modal.classList.add('modal');
+        modal.innerHTML = `
+          <h3>Message received!</h3>
+          <p>Thanks so much for your message. I'll get back to you soon.</p>
+          <button class="button-link">Close</button>
+        `;
+        modalRoot.appendChild(modal);
+        const modalButton = modal.querySelector('.button-link');
+        // Event listener for close button click
+        modalButton.addEventListener('click', closeModal);
+        // Event listener for ESC keydown
+        document.addEventListener('keydown', ESCKeydownToClose);
+      })
+      .catch((error) => {
+        modalRoot.classList.add('active');
+        const modal = document.createElement('div');
+        modal.classList.add('modal');
+        modal.innerHTML = `
+          <h3>Message failed to send.</h3>
+          <p>Unfortunately an error occured:</p>
+          <p>${error.message}</p>
+          <p>Please try again later or send me an email directly instead.</p>
+          <button class="button-link">Close</button>
+        `;
+        modalRoot.appendChild(modal);
+        const modalButton = modalRoot.querySelector('.button-link');
+        // Event listener for close button click
+        modalButton.addEventListener('click', closeModal);
+        // Event listener for ESC keydown
+        document.addEventListener('keydown', ESCKeydownToClose);
+      });
   };
+  contactForm.addEventListener('submit', handleSubmit);
 });
