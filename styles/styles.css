@@ -336,7 +336,7 @@ a:focus .underline::after {
   font-size: 2rem;
   font-family: "Poppins", sans-serif;
 }
-.nav nav a:first-child {
+.nav nav .home-icon {
   margin: 20px 0;
 }
 .nav nav .bold {
@@ -409,6 +409,9 @@ a:focus .underline::after {
   overflow: hidden;
   -ms-flex-negative: 0;
       flex-shrink: 0;
+}
+.nav nav .hamburger .fa-bars,
+.nav nav .hamburger .fa-times {
   padding: 20px;
 }
 

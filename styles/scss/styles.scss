@@ -89,7 +89,7 @@ a:focus .underline::after {
     // padding: 20px 0;
     font-size: 2rem;
     font-family: $fontHeader;
-    a:first-child {
+    .home-icon {
       margin: 20px 0;
     }
     .bold {
@@ -158,7 +158,10 @@ a:focus .underline::after {
       height: 0;
       overflow: hidden;
       flex-shrink: 0;
-      padding: 20px;
+      .fa-bars,
+      .fa-times {
+        padding: 20px;
+      }
     }
   }
 }
