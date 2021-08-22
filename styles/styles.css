@@ -333,9 +333,11 @@ a:focus .underline::after {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 20px 0;
   font-size: 2rem;
   font-family: "Poppins", sans-serif;
+}
+.nav nav a:first-child {
+  margin: 20px 0;
 }
 .nav nav .bold {
   font-weight: 700;
@@ -407,6 +409,7 @@ a:focus .underline::after {
   overflow: hidden;
   -ms-flex-negative: 0;
       flex-shrink: 0;
+  padding: 20px;
 }
 
 /* Header Styles */
@@ -724,7 +727,7 @@ section {
   line-height: 2.5rem;
 }
 .contact .modalRoot.active {
-  position: absolute;
+  position: fixed;
   inset: 0;
   background-color: rgba(32, 32, 32, 0.6);
 }
